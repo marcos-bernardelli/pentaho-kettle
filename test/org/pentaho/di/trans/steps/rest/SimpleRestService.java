@@ -31,7 +31,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  * A simple rest service
- * 
+ *
  * @author vladimir.dolzhenko@gmail.com
  */
 @Path( "/simple" )

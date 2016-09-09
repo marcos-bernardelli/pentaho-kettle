@@ -176,6 +176,8 @@ public class Rest extends BaseStep implements StepInterface {
           response = builder.type( data.mediaType ).post( ClientResponse.class, entityString );
         } else if ( data.method.equals( RestMeta.HTTP_METHOD_PUT ) ) {
           response = builder.type( data.mediaType ).put( ClientResponse.class, entityString );
+        } else if ( data.method.equals( RestMeta.HTTP_METHOD_PATCH ) ) {
+          response = builder.type( data.mediaType ).method( RestMeta.HTTP_METHOD_PATCH, ClientResponse.class, entityString );
         } else if ( data.method.equals( RestMeta.HTTP_METHOD_DELETE ) ) {
           response = builder.type( data.mediaType ).delete( ClientResponse.class, entityString );
         } else if ( data.method.equals( RestMeta.HTTP_METHOD_HEAD ) ) {

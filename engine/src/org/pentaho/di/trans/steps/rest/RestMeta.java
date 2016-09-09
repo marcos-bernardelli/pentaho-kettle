@@ -75,11 +75,12 @@ public class RestMeta extends BaseStepMeta implements StepMetaInterface {
 
   private String applicationType;
 
-  public static final String[] HTTP_METHODS = new String[] { "GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS", };
+  public static final String[] HTTP_METHODS = new String[] { "GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS", };
 
   public static final String HTTP_METHOD_GET = "GET";
   public static final String HTTP_METHOD_POST = "POST";
   public static final String HTTP_METHOD_PUT = "PUT";
+  public static final String HTTP_METHOD_PATCH = "PATCH";
   public static final String HTTP_METHOD_DELETE = "DELETE";
   public static final String HTTP_METHOD_HEAD = "HEAD";
   public static final String HTTP_METHOD_OPTIONS = "OPTIONS";
@@ -914,14 +915,14 @@ public class RestMeta extends BaseStepMeta implements StepMetaInterface {
       return false;
     }
     return ( method.equals( HTTP_METHOD_POST ) || method.equals( HTTP_METHOD_PUT ) )
-      || method.equals( HTTP_METHOD_DELETE );
+      || method.equals( HTTP_METHOD_PATCH ) || method.equals( HTTP_METHOD_DELETE );
   }
 
   public static boolean isActiveParameters( String method ) {
     if ( Const.isEmpty( method ) ) {
       return false;
     }
-    return ( method.equals( HTTP_METHOD_POST ) || method.equals( HTTP_METHOD_PUT ) || method
-      .equals( HTTP_METHOD_DELETE ) );
+    return ( method.equals( HTTP_METHOD_POST ) || method.equals( HTTP_METHOD_PUT )
+      || method.equals( HTTP_METHOD_PATCH ) || method.equals( HTTP_METHOD_DELETE ) );
   }
 }
